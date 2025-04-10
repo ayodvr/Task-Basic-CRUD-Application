@@ -3,13 +3,25 @@
 <div class="container">
     <div class="col-md-12">
         <a href="{{ route('tasks.index', $user->id) }}" class="btn btn-info btn-sm">Back</a>
+    </br></br>
+        @if(count($errors) > 0) 
+            @foreach($errors->all() as $error)
+            <div
+                class="alert alert-danger"
+                style="width: 100%; margin: auto"
+                >
+                {{$error}}
+            </div>
+            @endforeach
+            @endif
+  
         <div class="form-area">  
             <form action="{{ route('tasks.store', $user->id) }}" method="POST">
                 @csrf
                 <h3 style="margin-bottom: 25px; text-align: center;">Task Form</h3>
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>

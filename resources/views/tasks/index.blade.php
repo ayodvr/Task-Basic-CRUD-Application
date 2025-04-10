@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h5 class="mb-0">{{ $user->first_name }}: Tasks</h5>
+                <h5 class="mb-0">{{ $user->first_name }}'s Tasks</h5>
                 
                 <a href="{{ route('tasks.create', ['user' => $user->id]) }}" class="btn btn-primary btn-sm">
                     + Create Task
